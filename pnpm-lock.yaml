@@ -3,7 +3,9 @@ lockfileVersion: 5.4
 specifiers:
   '@commitlint/cli': ^17.4.2
   '@commitlint/config-conventional': ^17.4.2
+  '@types/node': ^18.11.18
   '@typescript-eslint/eslint-plugin': ^5.0.0
+  commander: ^10.0.0
   commitizen: ^4.3.0
   conventional-changelog-cli: ^2.2.2
   cz-conventional-changelog: ^3.3.0
@@ -19,9 +21,13 @@ specifiers:
   unbuild: ^1.1.1
   vitest: ^0.28.3
 
+dependencies:
+  commander: 10.0.0
+
 devDependencies:
   '@commitlint/cli': 17.4.2
   '@commitlint/config-conventional': 17.4.2
+  '@types/node': 18.11.18
   '@typescript-eslint/eslint-plugin': 5.49.0_zkdaqh7it7uc4cvz2haft7rc6u
   commitizen: 4.3.0
   conventional-changelog-cli: 2.2.2
@@ -1482,6 +1488,11 @@ packages:
   /colorette/2.0.19:
     resolution: {integrity: sha512-3tlv/dIP7FWvj3BsbHrGLJ6l/oKh1O3TcgBqMn+yyCagOxc23fyzDS6HypQbgxWbkpDnf52p1LuR4eWDQ/K9WQ==}
     dev: true
+
+  /commander/10.0.0:
+    resolution: {integrity: sha512-zS5PnTI22FIRM6ylNW8G4Ap0IEOyk62fhLSD0+uHRT9McRCLGpkVNvao4bjimpK/GShynyQkFFxHhwMcETmduA==}
+    engines: {node: '>=14'}
+    dev: false
 
   /commander/9.5.0:
     resolution: {integrity: sha512-KRs7WVDKg86PWiuAqhDrAQnTXZKraVcCc6vFdL14qrZ/DcWwuRo7VoiYXalXO7S5GKpqYiVEwCbgFDfxNHKJBQ==}

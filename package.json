@@ -2,11 +2,14 @@
   "name": "@sneaken/mte",
   "version": "0.0.0",
   "description": "Manage tasks easily",
+  "bin": {
+    "mte": "./dist/bin/mte.mjs"
+  },
   "scripts": {
     "build": "unbuild",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "prepare": "husky install",
-    "start": "esno src/index.ts",
+    "start": "esno bin/mte.ts",
     "test": "vitest"
   },
   "keywords": [
@@ -17,6 +20,7 @@
   "devDependencies": {
     "@commitlint/cli": "^17.4.2",
     "@commitlint/config-conventional": "^17.4.2",
+    "@types/node": "^18.11.18",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "commitizen": "^4.3.0",
     "conventional-changelog-cli": "^2.2.2",
@@ -34,7 +38,7 @@
     "vitest": "^0.28.3"
   },
   "lint-staged": {
-    "(src|test)/**/*.ts": [
+    "(bin|src|test)/**/*.ts": [
       "eslint --fix"
     ]
   },
@@ -42,5 +46,8 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "dependencies": {
+    "commander": "^10.0.0"
   }
 }
