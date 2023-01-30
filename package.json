@@ -35,7 +35,7 @@
   },
   "lint-staged": {
     "(src|test)/**/*.ts": [
-      "eslint"
+      "eslint --fix"
     ]
   },
   "config": {
