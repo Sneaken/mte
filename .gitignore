@@ -28,6 +28,8 @@ node_modules/
 .env.local
 
 # IDE
-
 .idea
 .vscode
+
+# build
+dist
