@@ -1,9 +1,9 @@
 {
   "name": "@sneaken/mte",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Manage tasks easily",
   "bin": {
-    "mte": "./dist/bin/mte.mjs"
+    "mte": "./dist/mte.mjs"
   },
   "scripts": {
     "build": "unbuild",
