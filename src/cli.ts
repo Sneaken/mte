@@ -50,4 +50,15 @@ program
     })
   })
 
+program
+  .command('rm <name>')
+  .description('删除指定任务的所有脚本')
+  .action((name) => {
+    import('./commands/rm').then(({ default: run }) => {
+      run(name)
+    }).catch((error) => {
+      console.error(error)
+    })
+  })
+
 program.parse(process.argv)
