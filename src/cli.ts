@@ -28,4 +28,15 @@ program
     })
   })
 
+program
+  .command('show')
+  .description('查看所有任务下的脚本')
+  .action((names, options) => {
+    import('./commands/show').then(({ default: show }) => {
+      show(options)
+    }).catch((error) => {
+      console.error(error)
+    })
+  })
+
 program.parse(process.argv)
