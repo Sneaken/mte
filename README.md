@@ -1,2 +1,3 @@
 # mte
-Manage tasks easily
+
+Manage tasks easily in macOS with iTerm2
