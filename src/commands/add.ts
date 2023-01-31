@@ -22,8 +22,6 @@ function add (name: string, task: string, options: AddOptions): void {
     return
   }
 
-  tasks[name][currentPath].push(task)
-
   const lines = [
     info(`task: ${name}`),
     info(`add action: ${task}`),
