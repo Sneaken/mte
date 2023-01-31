@@ -13,7 +13,7 @@
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "prepare": "husky install",
     "prepublish": "pnpm build",
-    "start": "esno src/cli.ts",
+    "start": "esno src/cli.ts rm test",
     "test": "vitest"
   },
   "keywords": [
@@ -52,6 +52,7 @@
     }
   },
   "dependencies": {
+    "boxen": "^7.0.1",
     "chalk": "^5.2.0",
     "commander": "^10.0.0"
   }
