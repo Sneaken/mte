@@ -1,6 +1,6 @@
-import chalk from 'chalk'
-import { getConfig, setConfig } from '../config'
 import { cwd } from 'process'
+import { info, infoBoxed, warning, warningBoxed } from '../color'
+import { getConfig, setConfig } from '../config'
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 interface AddOptions {
@@ -17,13 +17,19 @@ function add (name: string, task: string, options: AddOptions): void {
     tasks[name] = { ...tasks[name], [currentPath]: [task] }
   }
 
-  if (!tasks[name][currentPath].includes(task)) {
-    tasks[name][currentPath].push(task)
+  if (tasks[name][currentPath].length > 1 && tasks[name][currentPath].includes(task)) {
+    console.log(warningBoxed(warning('该脚本已存在, 请勿重复添加'), { margin: 1 }))
+    return
   }
 
-  console.log(chalk.cyanBright(`task: ${name}`))
-  console.log(chalk.cyanBright(`add action: ${task}`))
-  console.log(chalk.cyanBright(`on: ${currentPath}`))
+  tasks[name][currentPath].push(task)
+
+  const lines = [
+    info(`task: ${name}`),
+    info(`add action: ${task}`),
+    info(`on: ${currentPath}`)
+  ]
+  console.log(infoBoxed(lines.join('\n'), { margin: 1 }))
 
   setConfig(config)
 }

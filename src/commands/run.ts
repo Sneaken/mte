@@ -1,5 +1,5 @@
 import { execSync, spawnSync } from 'child_process'
-import chalk from 'chalk'
+import { error, errorBoxed, warning, warningBoxed } from '../color'
 import { getConfig } from '../config'
 import { isExist, parseAppleScript, readFile } from '../utils'
 
@@ -22,7 +22,7 @@ function run (name: string): void {
 
   const task = tasks[name]
   if (!task) {
-    console.log(chalk.red('当前任务不存在'))
+    console.log(warningBoxed(warning('当前任务不存在'), { margin: 1 }))
     return
   }
 
@@ -47,9 +47,9 @@ function run (name: string): void {
   })
 
   try {
-    spawnSync('osascript', ['-ss', '-e', parseAppleScript(cmds)])
+    spawnSync('osascript', ['-e', parseAppleScript(cmds)])
   } catch (e) {
-    console.log(chalk.red(e))
+    console.log(errorBoxed(error(String(e))))
   }
 }
 

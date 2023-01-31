@@ -1,6 +1,6 @@
-import chalk from 'chalk'
 import { readFileSync, writeFileSync } from 'fs'
 import { homedir } from 'os'
+import { error, errorBoxed } from './color'
 import { isExist } from './utils'
 
 interface Config {
@@ -28,9 +28,12 @@ export function getConfig (): Config {
 export function setConfig (config: Config = DEFAULT_CONFIG): void {
   try {
     writeFileSync(CONFIG_PATH, JSON.stringify(config, null, 2), { encoding: 'utf-8' })
-  } catch (error) {
-    chalk.bgRedBright(error)
-    chalk.red('please try again')
+  } catch (e) {
+    const lines = [
+      error(String(e)),
+      error('please try again')
+    ]
+    console.log(errorBoxed(error(lines.join('\n')), { margin: 1 }))
   }
 }
 

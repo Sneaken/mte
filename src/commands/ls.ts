@@ -1,8 +1,9 @@
-import chalk from 'chalk'
+import { dir, info, infoBoxed, script, title, warning, warningBoxed } from '../color'
 import { getConfig } from '../config'
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
-interface lsOptions {}
+interface lsOptions {
+}
 
 function ls (names: string[], options: lsOptions): void {
   const { tasks } = getConfig()
@@ -11,18 +12,19 @@ function ls (names: string[], options: lsOptions): void {
     const task = tasks[name]
 
     if (!task) {
-      console.log(chalk.red(`不存在任务: ${name}`))
-      console.log()
+      console.log(warningBoxed(warning(`不存在任务: ${name}`), { margin: 1 }))
       return
     }
 
+    console.log(title(`当前的任务: ${name}`))
+
     Object.keys(task).forEach(path => {
-      console.log(chalk.cyanBright(`> ${path}:`))
-      task[path].forEach(action => {
-        console.log(chalk.yellowBright(`>> ${action}`))
+      const lines = [dir(`> ${path}:`)]
+      task[path].forEach(s => {
+        lines.push(script(`>> ${s}`))
       })
+      console.log(infoBoxed(info(lines.join('\n'))))
     })
-    console.log()
   })
 }
 

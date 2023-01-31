@@ -1,5 +1,4 @@
-
-import chalk from 'chalk'
+import { dir, info, infoBoxed, script, title, warning, warningBoxed } from '../color'
 import { getConfig } from '../config'
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
@@ -11,22 +10,22 @@ function show (options: showOptions): void {
   const names = Object.keys(tasks)
 
   if (!names.length) {
-    console.log(chalk.yellow('当前不存在任务'))
+    console.log(warningBoxed(warning('当前不存在任务'), { margin: 1 }))
     return
   }
 
   names.forEach(name => {
-    console.log(chalk.magenta(`task: ${name}`))
+    const lines = [title(`task: ${name}`)]
 
     const task = tasks[name]
     Object.keys(task).forEach(path => {
-      console.log(chalk.cyanBright(`> ${path}:`))
-      task[path].forEach(action => {
-        console.log(chalk.yellowBright(`>> ${action}`))
+      lines.push(dir(`> ${path}:`))
+      task[path].forEach(s => {
+        lines.push(script(`>> ${s}`))
       })
     })
 
-    console.log()
+    console.log(infoBoxed(info(lines.join('\n'))))
   })
 }
 
