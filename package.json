@@ -1,6 +1,6 @@
 {
   "name": "@sneaken/mte",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Manage tasks easily",
   "bin": {
     "mte": "./dist/cli.mjs"

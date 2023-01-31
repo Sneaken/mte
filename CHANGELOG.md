@@ -1,3 +1,13 @@
+## [0.0.5](https://github.com/Sneaken/mte/compare/v0.0.4...v0.0.5) (2023-01-31)
+
+
+### Features
+
+* pretty ([5a1e323](https://github.com/Sneaken/mte/commit/5a1e32357cfd98e09724f6eeffe3175259b05e1d))
+* set style ([15202f4](https://github.com/Sneaken/mte/commit/15202f4d9bf760d6972f8b1fe24a3e1ed61f6844))
+
+
+
 ## [0.0.4](https://github.com/Sneaken/mte/compare/v0.0.3...v0.0.4) (2023-01-31)
 
 
