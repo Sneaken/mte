@@ -13,7 +13,7 @@ function add (name: string, task: string, options: AddOptions): void {
 
   const tasks = config.tasks
 
-  if (!tasks[name]) {
+  if (!tasks[name]?.[currentPath]) {
     tasks[name] = { ...tasks[name], [currentPath]: [task] }
   }
 
