@@ -8,11 +8,21 @@ program
 
 program
   .command('add <name> <task>')
+  .description('添加脚本到任务队列')
   .action((name, task, options) => {
-    // mte add name dev
-    // cd path && 执行任何事情
-    import('../src/commands/add').then(({ default: add }) => {
+    import('./commands/add').then(({ default: add }) => {
       add(name, task, options)
+    }).catch((error) => {
+      console.error(error)
+    })
+  })
+
+program
+  .command('ls <names...>')
+  .description('查看指定任务下存在的脚本')
+  .action((names, options) => {
+    import('./commands/ls').then(({ default: ls }) => {
+      ls(names, options)
     }).catch((error) => {
       console.error(error)
     })

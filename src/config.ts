@@ -4,7 +4,7 @@ import { homedir } from 'os'
 import { isExist } from './utils'
 
 interface Config {
-  tasks: Record<string, any>
+  tasks: Record<string, Record<string, string[]>>
 }
 
 const CONFIG_PATH = `${homedir()}/.mterc`
