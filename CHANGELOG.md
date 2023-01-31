@@ -1,3 +1,12 @@
+## [0.0.4](https://github.com/Sneaken/mte/compare/v0.0.3...v0.0.4) (2023-01-31)
+
+
+### Bug Fixes
+
+* command 'add' in newPath will throw error ([2d63425](https://github.com/Sneaken/mte/commit/2d634256bfaf8ee3b870160e30ec6dd50ff21f82))
+
+
+
 ## [0.0.3](https://github.com/Sneaken/mte/compare/v0.0.2...v0.0.3) (2023-01-31)
 
 
