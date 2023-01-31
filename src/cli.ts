@@ -54,8 +54,8 @@ program
   .command('rm <name>')
   .description('删除指定任务的所有脚本')
   .action((name) => {
-    import('./commands/rm').then(({ default: run }) => {
-      run(name)
+    import('./commands/rm').then(({ default: rm }) => {
+      rm(name)
     }).catch((error) => {
       console.error(error)
     })
