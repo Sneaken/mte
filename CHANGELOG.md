@@ -1,3 +1,12 @@
+## [0.0.6](https://github.com/Sneaken/mte/compare/v0.0.5...v0.0.6) (2023-01-31)
+
+
+### Bug Fixes
+
+* add script repeatedly ([6d1898b](https://github.com/Sneaken/mte/commit/6d1898b3dd3ec9028574dbc36b34f6bda8bad77d))
+
+
+
 ## [0.0.5](https://github.com/Sneaken/mte/compare/v0.0.4...v0.0.5) (2023-01-31)
 
 
