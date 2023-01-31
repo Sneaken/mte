@@ -13,7 +13,8 @@
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "prepare": "husky install",
     "prepublish": "pnpm build",
-    "start": "esno src/cli.ts rm test",
+    "release": "esno scripts/release",
+    "start": "esno src/cli.ts",
     "test": "vitest"
   },
   "keywords": [
@@ -24,11 +25,14 @@
   "devDependencies": {
     "@commitlint/cli": "^17.4.2",
     "@commitlint/config-conventional": "^17.4.2",
+    "@types/minimist": "^1.2.2",
     "@types/node": "^18.11.18",
+    "@types/semver": "^7.3.13",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "commitizen": "^4.3.0",
     "conventional-changelog-cli": "^2.2.2",
     "cz-conventional-changelog": "^3.3.0",
+    "enquirer": "^2.3.6",
     "eslint": "^8.0.1",
     "eslint-config-standard-with-typescript": "^33.0.0",
     "eslint-plugin-import": "^2.25.2",
@@ -37,6 +41,8 @@
     "esno": "^0.16.3",
     "husky": "^8.0.3",
     "lint-staged": "^13.1.0",
+    "minimist": "^1.2.7",
+    "semver": "^7.3.8",
     "typescript": "*",
     "unbuild": "^1.1.1",
     "vitest": "^0.28.3"
