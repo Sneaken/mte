@@ -3,13 +3,16 @@
   "version": "0.0.1",
   "description": "Manage tasks easily",
   "bin": {
-    "mte": "./dist/mte.mjs"
+    "mte": "./dist/cli.mjs"
   },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "unbuild",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "prepare": "husky install",
-    "start": "esno bin/mte.ts",
+    "start": "esno src/cli.ts",
     "test": "vitest"
   },
   "keywords": [

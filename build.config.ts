@@ -1,13 +1,8 @@
 import { defineBuildConfig } from 'unbuild'
 
 export default defineBuildConfig({
-  entries: [
-    'bin/mte'
-  ],
-  declaration: true,
+  entries: ['./src/cli'],
+  // declaration: true,
   clean: true,
-  failOnWarn: false,
-  rollup: {
-    emitCJS: true
-  }
+  failOnWarn: false
 })
