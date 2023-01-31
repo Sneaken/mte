@@ -39,4 +39,15 @@ program
     })
   })
 
+program
+  .command('run <name>')
+  .description('执行指定任务的所有脚本')
+  .action((name) => {
+    import('./commands/run').then(({ default: run }) => {
+      run(name)
+    }).catch((error) => {
+      console.error(error)
+    })
+  })
+
 program.parse(process.argv)
