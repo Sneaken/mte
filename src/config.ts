@@ -1,3 +1,4 @@
+import chalk from 'chalk'
 import { readFileSync, writeFileSync } from 'fs'
 import { homedir } from 'os'
 import { isExist } from './utils'
@@ -25,7 +26,12 @@ export function getConfig (): Config {
   }
 }
 export function setConfig (config: Config = DEFAULT_CONFIG): void {
-  writeFileSync(CONFIG_PATH, JSON.stringify(config, null, 2), { encoding: 'utf-8' })
+  try {
+    writeFileSync(CONFIG_PATH, JSON.stringify(config, null, 2), { encoding: 'utf-8' })
+  } catch (error) {
+    chalk.bgRedBright(error)
+    chalk.red('please try again')
+  }
 }
 
 function validateConfig (config: Config): void {
