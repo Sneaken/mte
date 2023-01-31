@@ -1,3 +1,12 @@
+## [0.0.3](https://github.com/Sneaken/mte/compare/v0.0.2...v0.0.3) (2023-01-31)
+
+
+### Bug Fixes
+
+* name error and forget build ([05e5d9e](https://github.com/Sneaken/mte/commit/05e5d9ef8bf72d6bfb0dd7eefe9c20d7669bff58))
+
+
+
 ## 0.0.2 (2023-01-31)
 
 
