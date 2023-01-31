@@ -12,6 +12,7 @@
     "build": "unbuild",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "prepare": "husky install",
+    "prepublish": "pnpm build",
     "start": "esno src/cli.ts",
     "test": "vitest"
   },
